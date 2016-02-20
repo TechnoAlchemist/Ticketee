@@ -1,9 +1,8 @@
 require "rails_helper"
 
 RSpec.feature "Users can create new projects" do
-  before(:each) do |variable|
+  before(:each) do 
     visit "/"
-    
     click_link "New Project"
     
   end
