@@ -7,13 +7,15 @@
     <li>
       <%= link_to fa_icon("pencil") + " Edit Project", edit_project_path(@project), class: "edit" %>
     </li>
-    <li>
-      <%= button_to "Delete Project", admin_project_path(@project), 
-          method: :delete,
-          data: { confirm: "Are you sure you want to delete this projects?" },
-          class: "btn btn-danger" 
-      %>
-    </li>
+    <% admins_only do %>
+      <li>
+        <%= button_to "Delete Project", admin_project_path(@project), 
+            method: :delete,
+            data: { confirm: "Are you sure you want to delete this projects?" },
+            class: "btn btn-danger" 
+        %>
+      </li>
+    <% end %>
   </ul>  
 </header>
 
