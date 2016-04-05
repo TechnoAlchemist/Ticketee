@@ -21,6 +21,8 @@ Rails.application.routes.draw do
     resources :tickets
   end
 
+  resources :attachments, only: [:show]
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
