@@ -1,6 +1,5 @@
 class AttachmentsController < ApplicationController
-  # before_action :set_ticket
-  # before_action :set_attachment, only: [:show]
+  skip_after_action :verify_authorized, only: [:new]
 
   def show
     attachment = Attachment.find(params[:id])
@@ -8,13 +7,11 @@ class AttachmentsController < ApplicationController
     send_file attachment.file.path, disposition: :inline
   end
 
-  # private 
+  def new
+    @index = params[:index].to_i
+    @ticket = Ticket.new
+    @ticket.attachments.build
+    render layout: false
+  end
 
-  # def set_ticket
-  #   @ticket = Ticket.find(params[:id])
-  # end
-
-  # def set_attachment
-  #   @attachment = @tickets.attachments.find(params[:id])
-  # end
 end
