@@ -7,10 +7,10 @@ RSpec.feature "Users can comment on tickets" do
 
   before do
     login_as(user)
+    assign_role!(user, :manager, project)
   end
 
   scenario "with valid attributes" do
-    assign_role!(user, :manager, project)
     visit project_ticket_path(project, ticket)
     fill_in "Text", with: "Added a comment!"
     click_button "Create Comment"
@@ -22,7 +22,6 @@ RSpec.feature "Users can comment on tickets" do
   end
 
   scenario "with an invalid attributes" do
-    assign_role!(user, :manager, project)
     visit project_ticket_path(project, ticket)
     click_button "Create Comment"
 
@@ -30,7 +29,6 @@ RSpec.feature "Users can comment on tickets" do
   end
 
   scenario "when changing a ticket's state" do
-    assign_role!(user, :manager, project)
     FactoryGirl.create(:state, name: "Open")
     visit project_ticket_path(project, ticket)
     fill_in "Text", with: "This is a real issue"
@@ -50,6 +48,7 @@ RSpec.feature "Users can comment on tickets" do
   end
 
   scenario "but cannot change the state without permission" do
+    clear_roles(user, project)
     assign_role!(user, :editor, project)
     visit project_ticket_path(project, ticket)
 
