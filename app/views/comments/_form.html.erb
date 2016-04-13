@@ -6,7 +6,11 @@
   <%= f.input :text %>
   <% if policy(ticket).change_state? %>
     <%= f.association :state %>
+  <% end %>
+
+  <% if policy(ticket).tag? %>
     <%= render "tags/form", f: f %>
   <% end %>
+  
   <%= f.submit class: "btn btn-primary" %>
 <% end %>
