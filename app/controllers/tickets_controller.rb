@@ -34,6 +34,16 @@ class TicketsController < ApplicationController
     @comment = @ticket.comments.build(state_id: @ticket.state_id)
   end
 
+  def search
+    authorize @project, :show?
+    if params[:search].present?
+      @tickets = @project.tickets.search(params[:search])
+    else
+      @tickets = @project.tickets
+    end
+    render "projects/show"
+  end
+
   def edit
     authorize @ticket, :update?
   end

@@ -31,7 +31,7 @@ class Comment < ActiveRecord::Base
   def associate_tags_with_ticket
     if tag_names  
       tag_names.split.each do |name|
-        ticket.tags << Tag.first_or_initialize(name: name)
+        ticket.tags << Tag.where(name: name).first_or_create 
       end
     end
   end

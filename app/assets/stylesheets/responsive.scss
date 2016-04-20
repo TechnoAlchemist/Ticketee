@@ -12,3 +12,17 @@
     text-align: right;
   }
 }
+
+@media(max-width: 768px) {
+  input#search {
+    display: inline-block;
+    vertical-align: middle;
+    width: auto;
+  }
+}
+
+@media(max-width: 768px) {
+  ul.actions .form-inline {
+    padding-bottom: 5px;
+  }
+}
