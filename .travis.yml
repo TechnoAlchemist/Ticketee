@@ -1,0 +1,13 @@
+language: ruby
+rvm: 2.2.3
+script: rspec
+before_install:
+- export DISPLAY=:99.0
+- sh -e /etc/init.d/xvfb start
+deploy:
+  provider: heroku
+  api_key:
+    secure: H7dFqYms90bc0jbsXvB4yiOnpFEkGZ/djYALiHihtyJECroItD8kQ9h61JuhPVE/hYtSsdHTURsl20NWfuGN9JcwfvxMuPKOZYyBeOgPfmTaYdIWDdVPlSAWkySS9FA8QtKTHWj49UB9je6OF5Ej85K4QEh3JXkUNuWdTlutxGfYS61xMuov9juu1eDDaK7TBM3XYq5ABJa1wse+DRi1EyBf+4qeTPey1f+esCIiyz+J6quaXFNAffxAGkvfvyRKH+A4mu+af0DG3KhVJsLYIAWKEFBXJthcHiNE0WDx/WwDCxNwvy1YCXC7xcWj9Ke9bw8MGRuxH6xlBdabOOUOej0B0/V2zkF5w0n/W2UWMSVWheMp4YQXmOf+JfGr8bEw6YAE7QXVena31Oi08BnAL0fpwj88sp2cFYyxC+e1K6I/44iMhq4bCNU5kdjIcZV0rOUb2EMRlQgbqQ2cdRjeto/d5FEzSyhaZkBUX/y0GsIfswYQ3LSnYLU45JgcV33Nq0CERGq3cnqKC8jEEqU9rY0jEwDlIYu6kpYzwhtOI1YoFXWhIU7isgVTiZKXLJB94GWuPJZiosnekpo7EcHy0P8ZB7rB2xoH83szhHcWSr149gizWcdBxt/tXbmys6XXCMWvHqr5cAKCQTKT+4iTsVdT/O4t7S8SMLRRiya8C5s=
+  app: serene-journey-87611
+  on:
+    repo: TechnoAlchemist/ticketee
