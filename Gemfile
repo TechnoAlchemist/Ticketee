@@ -34,6 +34,8 @@ gem "carrierwave", "~> 0.10.0"
 
 gem "database_cleaner", "~> 1.4"
 
+gem "fog", "~> 1.29.0"
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
