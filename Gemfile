@@ -1,7 +1,5 @@
 source 'https://rubygems.org'
 
-ruby '2.0.0'
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5.1'
 # Use postgresql as the database for Active Record
@@ -37,6 +35,8 @@ gem "database_cleaner", "~> 1.4"
 
 gem "fog", "~> 1.29.0"
 
+gem 'net-ssh'
+
 gem "rails_12factor", group: :production
 
 # Use ActiveModel has_secure_password
@@ -70,9 +70,5 @@ group :test do
   gem "selenium-webdriver", "~> 2.45"
   gem "launchy"
   gem "email_spec", "~> 1.6.0"
-end
-
-group :production do
-  gem "rails_12factor"
 end
 
