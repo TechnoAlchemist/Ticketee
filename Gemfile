@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+ruby '2.0.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5.1'
@@ -35,6 +36,8 @@ gem "carrierwave", "~> 0.10.0"
 gem "database_cleaner", "~> 1.4"
 
 gem "fog", "~> 1.29.0"
+
+gem "rails_12factor", group: :production
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
