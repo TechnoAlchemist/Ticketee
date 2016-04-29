@@ -1,4 +1,4 @@
---format Fuubar
+--format d
 --color
 --require spec_helper
 --require rails_helper

@@ -2,6 +2,8 @@ services:
   - postgresql
 before_script:
   - psql -c 'create database ticketee_test;' -U postgres
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
 deploy:
   provider: heroku
   api_key:
